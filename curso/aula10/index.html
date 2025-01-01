@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais Emcadeada </title>
+</head>
+
+<body>
+    <h1>Curso de JavaScript</h1>
+    <h2>Condicionais Emcadeada</h2>
+    
+      
+    <h3>
+        O problema pode estar relacionado ao uso da função `document.write`
+    após o carregamento completo da página. `document.write` pode sobrescrever
+    o conteúdo da página se for chamado após o carregamento. Uma alternativa é usar
+    `console.log` ou manipular o DOM diretamente.
+    
+    
+    Se você quiser continuar usando `document.write`,
+    certifique-se de que o código está sendo executado 
+    antes do fechamento da tag `
+</h3>
+
+    <br> <br> <br>
+</body>
+
+<script>
+    
+
+media =prompt('Digite a média do aluno: ');
+
+      
+
+    if (media == 10) {
+        document.write('Aprovado com Distinção');
+        next
+    } if (media == 9) {
+        document.write('Aprovado com Louvor');
+        next
+    } if (media >= 7) {
+        document.write('Aprovado');
+        next
+    } else {
+        document.write('Reprovado');
+        next
+    }
+
+/*
+
+
+<script>
+    var media = 8; // Adicionei a variável media para o exemplo
+    if (media >= 9) {
+        console.log('Aprovado com Louvor');
+    } else if (media >= 7) {
+        console.log('Aprovado');
+    } else {
+        console.log('Reprovado');
+    }
+
+    var idade = 18;
+    var sexo = 'M';
+    var renda = 1000;
+
+    if (idade >= 18) {
+        if (sexo == 'M') {
+            if (renda >= 1000) {
+                console.log('Aceito');
+            } else {
+                console.log('Negado');
+            }
+        } else {
+            console.log('Negado');
+        }
+    } else {
+        console.log('Negado');
+    }
+*/
+</script>
+
+
+</body>`:
+
+
+<body>
+    <script>
+        var media = 8; // Adicionei a variável media para o exemplo
+        if (media >= 9) {
+            document.write('Aprovado com Louvor<br>');
+        } else if (media >= 7) {
+            document.write('Aprovado<br>');
+        } else {
+            document.write('Reprovado<br>');
+        }
+
+        var idade = 18;
+        var sexo = 'M';
+        var renda = 1000;
+
+        if (idade >= 18) {
+            if (sexo == 'M') {
+                if (renda >= 1000) {
+                    document.write('Aceito<br>');
+                } else {
+                    document.write('Negado<br>');
+                }
+            } else {
+                document.write('Negado<br>');
+            }
+        } else {
+            document.write('Negado<br>');
+        }
+    </script>
+</body>
+```
+    idade = 18;
+    var sexo = 'M';
+    var renda = 1000;
+
+    if (idade >= 18) {
+        if (sexo == 'M') {
+            if (renda >= 1000) {
+                document.write('Aceito');
+            } else {
+                document.write('Negado');
+            }
+        } else {
+            document.write('Negado');
+        }
+    } else {
+        console.log('Negado');
+    }
+
+</script>
+
+</html>
