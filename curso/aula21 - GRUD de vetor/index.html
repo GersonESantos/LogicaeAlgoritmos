@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 - Manipulando posições de um vetor</title>
+
+
+</head>
+
+
+<body>
+    <h1>Curso de JavaScript</h1>
+    <h2>20 - Manipulando posições de um vetor</h2>
+    <script>
+
+        cores = ["vermelho", "amarelo", "roxo", "preto", "branco", "laranja"];
+
+        document.write("<br>");
+        document.write(cores.length + "<br>");
+        document.write("<br>");
+        for (let i = 0; i < cores.length; i++) {
+            document.write(cores[i] + "<br>");
+        }
+
+        cores.push("marrom");
+        document.write(cores.length + "<br>");
+        document.write("<br>");
+        for (let i = 0; i < cores.length; i++) {
+            document.write(cores[i] + "<br>");
+        }
+        document.write("<br>");
+
+
+
+    </script>
+</body>
+
+</html>
