@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de getElementById</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de getElementById</h1>
+    <p>Digite algo no campo abaixo e clique no botão para atualizar o texto:</p>
+    
+    <input type="text" id="userInput" placeholder="Digite algo aqui">
+    <button onclick="updateText()">Atualizar Texto</button>
+    
+    <p id="output">Texto será exibido aqui.</p>
+    
+    <script>
+        function updateText() {
+            // Obtém o valor do campo de entrada
+            const input = document.getElementById('userInput').value;
+            
+            // Atualiza o texto do parágrafo
+            const output = document.getElementById('output');
+            output.textContent = input || "Digite algo no campo acima!";
+        }
+    </script>
+</body>
+</html>
