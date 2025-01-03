@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByI</title>
+</head>
+<body>
+    <input type="getElementByI" placeholder="Informe a  nota" id="nota1">
+    <button onclick="obterMedia()">Click</button>
+
+</body>
+<script>
+    function obterMedia(){
+    var nota = parseFloat(document.getElementById("nota1").value) 
+    document.write("A nota é "+nota+"")
+    }
+</script>
+</html>
