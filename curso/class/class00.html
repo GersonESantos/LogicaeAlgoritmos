@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Classe com arrow em JavaScript</title>
+
+    <!-- JS -->
+    <script>
+        // Definindo uma classe Pessoa
+        class Pessoa {
+            constructor(nome, idade) {
+                this.nome = nome;
+                this.idade = idade;
+            }
+
+            // Método para exibir informações da pessoa
+            exibirInfo() {
+                return `Nome: ${this.nome}, Idade: ${this.idade}`;
+            }
+        }
+
+        // Criando uma instância da classe Pessoa
+        const pessoa1 = new Pessoa('João', 30);
+
+        // Função para exibir as informações da pessoa
+        const exibirPessoa = () => {
+            document.write(pessoa1.exibirInfo());
+        }
+    </script>
+</head>
+<body>
+    
+    <!-- Botão -->
+    <button onclick="exibirPessoa()">Exibir Pessoa</button>
+</body>
+</html>

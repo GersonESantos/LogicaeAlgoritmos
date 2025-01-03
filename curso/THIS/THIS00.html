@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIS</title>
+</head>
+
+<body>
+    <script>
+        console.log(this); // Window
+        function fnExpression() {
+            console.log('this dentro function fnExpression');
+            console.log(this)// Window
+        }
+        fnExpression();
+
+        const fnArrow = () => {
+            console.log('this dentro da arrow function fnArrow'); // Window
+            console.log(this); // Window
+        }
+        fnArrow();
+    </script>
+</body>
+
+</html>
