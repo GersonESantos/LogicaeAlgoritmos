@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>onclick</title>
+
+    <!-- JS -->
+    <script>
+        class Retangulo {
+            constructor(largura, altura) {
+                // Usando 'this' para referenciar os atributos da instância
+                this.largura = largura;
+                this.altura = altura;
+            }
+
+            // Método para calcular a área
+            calcularArea() {
+                return this.largura * this.altura;
+            }
+
+            // Método para exibir as dimensões
+            exibirDimensoes() {
+                console.log(`Largura: ${this.largura}, Altura: ${this.altura}`);
+                document.write("<br>");
+                document.write(`Largura: ${this.largura}, Altura: ${this.altura}`);
+            }
+
+            // Método para dobrar as dimensões
+            dobrarDimensoes() {
+                this.largura *= 2;
+                this.altura *= 2;
+                return this; // Retorna o próprio objeto para permitir encadeamento
+            }
+        }
+
+        // Criando instâncias da classe Retangulo
+        const ret1 = new Retangulo(5, 3);
+        const ret2 = new Retangulo(10, 6);
+
+        // Exibindo dimensões e área do primeiro retângulo
+        ret1.exibirDimensoes();
+        console.log(`Area: ${ret1.calcularArea()}`);
+        document.write(`Area: ${ret1.calcularArea()}`);
+        document.write("<br>");
+        // Dobrando as dimensões e exibindo novamente
+        ret1.dobrarDimensoes().exibirDimensoes();
+        console.log(`Area após dobrar: ${ret1.calcularArea()}`);
+        document.write(`Area após dobrar: ${ret1.calcularArea()}`);
+        document.write("<br>");
+        // Exibindo dimensões e área do segundo retângulo
+        ret2.exibirDimensoes();
+        console.log(`Area: ${ret2.calcularArea()}`);
+        document.write(`Area: ${ret2.calcularArea()}`);
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Botão -->
+    <h1>onclick</h1>
+    <button onclick="exibirSoma()">Calcular Area</button>
+</body>
+
+</html>
