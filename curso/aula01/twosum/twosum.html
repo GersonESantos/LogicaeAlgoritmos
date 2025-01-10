@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWO SUM</title>
+    <script>
+       function twoSum(nums, target) {
+    const numMap = new Map(); // Mapeia valores para seus índices
+    let i = 0;
+
+    while (i < nums.length) {
+        const complement = target - nums[i];
+
+        // Verifica se o complemento já está no mapa
+        if (numMap.has(complement)) {
+            return [numMap.get(complement), i]; // Retorna os índices dos dois números
+        }
+
+        // Adiciona o número atual e seu índice no mapa
+        numMap.set(nums[i], i);
+
+        i++; // Incrementa o índice
+    }
+
+    return []; // Retorna vazio se não encontrar uma solução
+}
+
+// Exemplo de uso:
+const nums = [2, 7, 11, 15];
+const target = 9;
+
+const result = twoSum(nums, target);
+console.log(result); // Saída: [0, 1]
+document.write('TWO SUM ' + result);
+
+    </script>
+</head>
+<body>
+    <h1>TWO SUM</h1>
+    TWO SUM
+</body>
+</html>
