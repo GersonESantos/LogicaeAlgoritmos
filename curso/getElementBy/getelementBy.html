@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo de Texto Estilizado</title>
+</head>
+<body>
+    <div id="texto-display">Olá, visitante!</div>
+    <div id="style-name"></div>
+
+    <script>
+        var displayBox = document.getElementById("texto-display");
+        var styleDisplay = document.getElementById("style-name");
+
+        const styles = [
+            { property: "color", value: "white" },
+            { property: "backgroundColor", value: "orange" },
+            { property: "padding", value: "10px" },
+            { property: "border", value: "1px solid black" },
+            { property: "width", value: "200px" },
+            { property: "height", value: "200px" },
+            { property: "margin", value: "10px auto" }, // Centralizado com auto
+            { property: "display", value: "flex" },
+            { property: "justifyContent", value: "center" },
+            { property: "alignItems", value: "center" },
+            { property: "flexDirection", value: "column" },
+            { property: "borderRadius", value: "10px" },
+            { property: "boxShadow", value: "0 0 10px black" },
+            { property: "transition", value: "all 0.5s" },
+            { property: "cursor", value: "pointer" },
+            { property: "fontFamily", value: "Arial, sans-serif" },
+            { property: "fontSize", value: "16px" },
+            { property: "fontWeight", value: "bold" },
+            { property: "textAlign", value: "center" },
+            { property: "textTransform", value: "uppercase" },
+            { property: "textDecoration", value: "none" },
+            { property: "textShadow", value: "1px 1px 1px black" },
+            { property: "lineHeight", value: "1.5" },
+            { property: "letterSpacing", value: "1px" },
+            { property: "wordSpacing", value: "2px" },
+            { property: "whiteSpace", value: "nowrap" },
+            { property: "overflow", value: "hidden" },
+            { property: "textOverflow", value: "ellipsis" },
+            { property: "opacity", value: "0.8" },
+            // { property: "filter", value: "blur(2px)" },
+            { property: "transform", value: "rotate(45deg)" },
+            { property: "transformOrigin", value: "center" }, // Erro corrigido
+            { property: "zIndex", value: "1" },
+            { property: "position", value: "relative" },
+            { property: "top", value: "10px" },
+            { property: "right", value: "10px" },
+            { property: "bottom", value: "10px" }
+        ];
+
+        let currentIndex = 0;
+
+        // Estilização inicial do style-name
+        styleDisplay.style.textAlign = "center";
+        styleDisplay.style.marginTop = "20px";
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                
+                if (currentIndex < styles.length) {
+                    const style = styles[currentIndex];
+                    displayBox.style[style.property] = style.value;
+                    styleDisplay.textContent = `Estilo aplicado: ${style.property}: ${style.value}`;
+                    currentIndex++;
+                } else {
+                    styleDisplay.textContent = "Todos os estilos foram aplicados!";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo getElementsByName</title>
+</head>
+<body>
+    <!-- Div com atributo 'name' para ser selecionado -->
+    <div name="texto-didatico">Aprendendo com Grok!</div>
+    <!-- Div para mostrar qual estilo foi aplicado -->
+    <div id="info-estilo"></div>
+
+    <script>
+        // Selecionando elementos pelo atributo 'name' (retorna uma NodeList)
+        var elementosTexto = document.getElementsByName("texto-didatico");
+        // Como 'getElementsByName' retorna uma coleção, pegamos o primeiro elemento [0]
+        var textoDisplay = elementosTexto[0];
+        // Selecionando o div para exibir informações
+        var infoDisplay = document.getElementById("info-estilo");
+
+        // Array de estilos para aplicar, cada um com uma propriedade e valor
+        const estilos = [
+            { propriedade: "color", valor: "blue" },
+            { propriedade: "backgroundColor", valor: "lightyellow" },
+            { propriedade: "fontSize", valor: "20px" },
+            { propriedade: "padding", valor: "15px" },
+            { propriedade: "border", valor: "2px dashed red" },
+            { propriedade: "width", valor: "250px" },
+            { propriedade: "margin", valor: "10px auto" },
+            { propriedade: "textAlign", valor: "center" },
+            { propriedade: "fontFamily", valor: "Verdana, sans-serif" },
+            { propriedade: "boxShadow", valor: "3px 3px 5px gray" }
+        ];
+
+        // Variável para controlar qual estilo será aplicado
+        let indiceAtual = 0;
+
+        // Estilizando inicialmente o div de informação
+        infoDisplay.style.textAlign = "center";
+        infoDisplay.style.marginTop = "20px";
+        infoDisplay.textContent = "Pressione Enter para aplicar estilos!";
+
+        // Adicionando um ouvinte de evento para a tecla Enter
+        document.addEventListener('keydown', function(evento) {
+            // Verifica se a tecla pressionada é 'Enter'
+            if (evento.key === 'Enter') {
+                // Impede o comportamento padrão do Enter (como submit de formulário)
+                evento.preventDefault();
+
+                // Verifica se ainda há estilos para aplicar
+                if (indiceAtual < estilos.length) {
+                    // Pega o estilo atual do array
+                    const estilo = estilos[indiceAtual];
+                    // Aplica o estilo ao elemento usando a propriedade e valor
+                    textoDisplay.style[estilo.propriedade] = estilo.valor;
+                    // Atualiza a mensagem com o estilo aplicado
+                    infoDisplay.textContent = `Estilo aplicado: ${estilo.propriedade}: ${estilo.valor}`;
+                    // Incrementa o índice para o próximo estilo
+                    indiceAtual++;
+                } else {
+                    // Mensagem quando todos os estilos foram aplicados
+                    infoDisplay.textContent = "Todos os estilos foram aplicados!";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
