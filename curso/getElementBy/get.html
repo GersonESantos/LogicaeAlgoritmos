@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo com getElementsByName</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="tx_nome" id="nome" placeholder="Digite seu nome">
+        <input type="text" name="text1" id="text1" value="Texto 1">
+        <input type="text" name="text2" id="text2" value="Texto 2">
+    </form>
+    <div id="info-estilo"></div>
+
+    <script>
+        // Selecionando os elementos pelo atributo 'name'
+        var inputNome = document.getElementsByName("tx_nome")[0];
+        var inputText1 = document.getElementsByName("text1")[0];
+        var inputText2 = document.getElementsByName("text2")[0];
+        var infoDisplay = document.getElementById("info-estilo");
+
+        // Definindo valores e estilos iniciais como no modelo
+        inputNome.value = "Gerson";
+        inputNome.style.backgroundColor = "gray";
+        inputText1.style.backgroundColor = "red";
+        inputText2.style.backgroundColor = "blue";
+
+        // Array de estilos para aplicar dinamicamente ao input 'tx_nome'
+        const estilos = [
+            { propriedade: "color", valor: "white" },
+            { propriedade: "backgroundColor", valor: "orange" },
+            { propriedade: "padding", valor: "10px" },
+            { propriedade: "border", valor: "1px solid black" },
+            { propriedade: "width", valor: "200px" },
+            { propriedade: "fontSize", valor: "16px" },
+            { propriedade: "fontFamily", valor: "Arial, sans-serif" },
+            { propriedade: "fontWeight", valor: "bold" },
+            { propriedade: "textAlign", valor: "center" },
+            { propriedade: "boxShadow", valor: "0 0 5px black" }
+        ];
+
+        // Variável para controlar o índice do estilo
+        let indiceAtual = 0;
+
+        // Estilizando o div de informação
+        infoDisplay.style.textAlign = "center";
+        infoDisplay.style.marginTop = "20px";
+        infoDisplay.textContent = "Pressione Enter para aplicar estilos ao nome!";
+
+        // Evento de tecla Enter para aplicar estilos ao input 'tx_nome'
+        document.addEventListener('keydown', function(evento) {
+            if (evento.key === 'Enter') {
+                evento.preventDefault();
+
+                if (indiceAtual < estilos.length) {
+                    const estilo = estilos[indiceAtual];
+                    inputNome.style[estilo.propriedade] = estilo.valor;
+                    infoDisplay.textContent = `Estilo aplicado: ${estilo.propriedade}: ${estilo.valor}`;
+                    indiceAtual++;
+                } else {
+                    infoDisplay.textContent = "Todos os estilos foram aplicados!";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
